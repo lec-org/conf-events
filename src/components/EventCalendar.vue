@@ -44,7 +44,7 @@ function formatDateTimeLabel(date: string, time?: string, timezone = "UTC+8") {
   }).format(parseDate(date));
 
   if (!time) {
-    return `${dateLabel}, 09:00 AM ${timezone}`;
+    return `${dateLabel}, time TBA (${timezone} display default)`;
   }
 
   const [hourText = "09", minuteText = "00"] = time.split(":");
@@ -66,6 +66,24 @@ function formatRangeLabel(start: string, end?: string) {
   }
 
   if (sameMonth) {
+    return `${formatDisplayDate(start)} to ${endDate.getDate()}`;
+  }
+
+  return `${formatDisplayDate(start)} to ${formatDisplayDate(end)}`;
+}
+
+function formatCalendarDateRange(start: string, end?: string) {
+  const startDate = parseDate(start);
+  const endDate = end ? parseDate(end) : null;
+
+  if (!endDate) {
+    return formatDisplayDate(start);
+  }
+
+  const sameMonth = startDate.getMonth() === endDate.getMonth();
+  const sameYear = startDate.getFullYear() === endDate.getFullYear();
+
+  if (sameMonth && sameYear) {
     return `${formatDisplayDate(start)} to ${endDate.getDate()}`;
   }
 
@@ -290,6 +308,9 @@ onBeforeUnmount(() => {
             <div class="event-modal__section">
               <p class="event-modal__section-label">Schedule</p>
               <p>{{ activeEventTimeRange }}</p>
+              <p class="event-modal__subtle">
+                {{ formatCalendarDateRange(activeEvent.start, activeEvent.end) }}
+              </p>
             </div>
 
             <div class="event-modal__section">

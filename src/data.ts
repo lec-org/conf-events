@@ -59,6 +59,8 @@ export const events: CalendarEvent[] = [
     title: "AI for Good Global Summit",
     start: "2026-07-07",
     end: "2026-07-10",
+    startTime: "09:00",
+    endTime: "18:00",
     category: "AI",
     organizer: "ITU",
     location: "Geneva / Online",
@@ -66,7 +68,7 @@ export const events: CalendarEvent[] = [
     status: "confirmed",
     tags: ["policy", "industry", "research"],
     summary:
-      "An international summit spanning AI governance, research, social impact, and industry adoption.",
+      "The United Nations' leading AI platform, organized by ITU with UN partners and the Government of Switzerland.",
     highlights: ["Policy track", "Research sessions", "Industry showcases"],
     timezone: "UTC+8",
   },
@@ -163,6 +165,21 @@ export const events: CalendarEvent[] = [
     summary:
       "OpenAI's developer event centered on APIs, models, agent tooling, and platform roadmap.",
     highlights: ["API updates", "Model launches", "Developer platform"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "anthropic-code-with-claude-sf-2025",
+    title: "Code with Claude",
+    start: "2025-05-06",
+    category: "AI",
+    organizer: "Anthropic",
+    location: "San Francisco / Online",
+    url: "https://www.anthropic.com/events/code-with-claude-2025",
+    status: "confirmed",
+    tags: ["claude", "coding", "developer"],
+    summary:
+      "Anthropic's developer conference for hands-on workshops, live demos, and conversations with the Claude team.",
+    highlights: ["Hands-on workshops", "Claude demos", "Developer sessions"],
     timezone: "UTC+8",
   },
   {
@@ -305,6 +322,21 @@ export const events: CalendarEvent[] = [
     notes: "Past 2026 event kept for recap and archive value.",
     summary: "Google's annual developer event spanning Android, web, Chrome, and Gemini updates.",
     highlights: ["Android", "Web", "Gemini"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "qwen-conference-2026",
+    title: "Qwen Conference 2026",
+    start: "2026-05-26",
+    category: "AI",
+    organizer: "Alibaba Cloud",
+    location: "Singapore",
+    url: "https://www.qwencloud.com/events/qwen-conference-2026",
+    status: "confirmed",
+    tags: ["qwen", "agent", "developer"],
+    summary:
+      "Alibaba Cloud's flagship Qwen event for global developers and enterprise clients, focused on LLM and agent applications.",
+    highlights: ["Model roadmap", "Agent ecosystem", "Enterprise AI use cases"],
     timezone: "UTC+8",
   },
   {
