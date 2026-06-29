@@ -103,11 +103,25 @@ button {
 
 .toolbar {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
   margin-bottom: 24px;
+}
+
+.toolbar__primary {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.toolbar__title {
+  min-width: 0;
+}
+
+.toolbar__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+  min-height: 26px;
 }
 
 .toolbar__title h1,
@@ -115,20 +129,14 @@ button {
   font-size: 34px;
 }
 
-.toolbar__actions,
 .toolbar__group {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.toolbar__actions {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.toolbar__group--wrap {
-  flex-wrap: wrap;
+.toolbar__group--calendar-nav {
+  flex: 0 0 auto;
 }
 
 .toolbar__button {
@@ -155,6 +163,19 @@ button {
   color: var(--accent);
 }
 
+.toolbar__button--nav {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.toolbar__button--primary {
+  background: var(--accent-soft);
+  border-color: rgba(15, 139, 141, 0.42);
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1.9fr) minmax(280px, 0.95fr);
@@ -178,11 +199,13 @@ button {
 
 .event-card {
   display: block;
+  width: 100%;
   padding: 14px 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.76);
   text-decoration: none;
+  text-align: left;
   transition:
     transform 160ms ease,
     border-color 160ms ease;
@@ -249,14 +272,157 @@ button {
   border: 0;
   border-radius: 6px;
   padding: 2px 4px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: rgba(15, 139, 141, 0.16);
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.fc .fc-event-title,
+.fc .fc-event-main,
+.fc .fc-daygrid-event .fc-event-main,
+.fc .fc-daygrid-event .fc-event-title {
+  color: inherit;
+}
+
+.event-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(36, 28, 22, 0.38);
+  backdrop-filter: blur(8px);
+  z-index: 20;
+}
+
+.event-modal {
+  width: min(860px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  background: rgba(255, 250, 244, 0.96);
+  box-shadow: 0 28px 60px rgba(42, 32, 26, 0.18);
+}
+
+.event-modal__header,
+.event-modal__actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.event-modal__header {
+  margin-bottom: 18px;
+}
+
+.event-modal__header h3 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 0.98;
+}
+
+.event-modal__close {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.event-modal__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.9fr);
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.event-modal__main {
+  display: grid;
+  gap: 18px;
+}
+
+.event-modal__lede {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.event-modal__note {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.event-modal__meta-panel {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.62);
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.event-modal__section {
+  display: grid;
+  gap: 6px;
+}
+
+.event-modal__section p,
+.event-modal__list {
+  margin: 0;
+}
+
+.event-modal__section-label {
+  font-family: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.event-modal__list {
+  padding-left: 18px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.event-modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.event-modal__tag {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.72);
+  font-family: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--text);
 }
 
 @media (max-width: 960px) {
   .app-shell {
     width: min(100vw - 20px, 1200px);
     padding-top: 20px;
+  }
+
+  .toolbar__primary {
+    width: 100%;
+  }
+
+  .toolbar__meta {
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   .layout {
@@ -266,5 +432,17 @@ button {
   .hero,
   .event-board {
     padding: 18px;
+  }
+
+  .event-modal {
+    padding: 18px;
+  }
+
+  .event-modal__content {
+    grid-template-columns: 1fr;
+  }
+
+  .event-modal__actions {
+    flex-wrap: wrap;
   }
 }

@@ -7,6 +7,8 @@ export interface CalendarEvent {
   title: string;
   start: string;
   end?: string;
+  startTime?: string;
+  endTime?: string;
   category: EventCategory;
   organizer: string;
   location: string;
@@ -14,6 +16,9 @@ export interface CalendarEvent {
   status: EventStatus;
   tags: string[];
   notes?: string;
+  summary?: string;
+  highlights?: string[];
+  timezone?: string;
 }
 
 export const eventCategories: EventCategory[] = ["AI", "DevTools", "Frontend", "Cloud", "Mobile"];
@@ -31,6 +36,9 @@ export const events: CalendarEvent[] = [
     status: "confirmed",
     tags: ["agent", "llm", "app"],
     notes: "Applied AI engineering trends and agent tooling.",
+    summary: "A builder-focused event covering practical LLM products, agent systems, and evals.",
+    highlights: ["Agent engineering talks", "Product demos", "Applied AI case studies"],
+    timezone: "UTC+8",
   },
   {
     id: "vercel-ship-nyc-2026",
@@ -42,6 +50,25 @@ export const events: CalendarEvent[] = [
     url: "https://vercel.com/ship",
     status: "confirmed",
     tags: ["web", "platform", "ai"],
+    summary: "Vercel's release event for frontend platform updates, AI tooling, and DX changes.",
+    highlights: ["Platform keynote", "Product launches", "Frontend infra updates"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "ai-for-good-2026",
+    title: "AI for Good Global Summit",
+    start: "2026-07-07",
+    end: "2026-07-10",
+    category: "AI",
+    organizer: "ITU",
+    location: "Geneva / Online",
+    url: "https://aiforgood.itu.int/ai-events-calendar/",
+    status: "confirmed",
+    tags: ["policy", "industry", "research"],
+    summary:
+      "An international summit spanning AI governance, research, social impact, and industry adoption.",
+    highlights: ["Policy track", "Research sessions", "Industry showcases"],
+    timezone: "UTC+8",
   },
   {
     id: "kubecon-japan-2026",
@@ -54,6 +81,58 @@ export const events: CalendarEvent[] = [
     url: "https://www.cncf.io/kubecon-cloudnativecon-events/",
     status: "confirmed",
     tags: ["kubernetes", "cloud-native"],
+    summary:
+      "CNCF's regional event focused on Kubernetes, platform engineering, and cloud-native operations.",
+    highlights: ["Maintainer talks", "Platform engineering", "Cloud-native tooling"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "ai4-2026",
+    title: "Ai4",
+    start: "2026-08-04",
+    end: "2026-08-06",
+    category: "AI",
+    organizer: "Ai4",
+    location: "Las Vegas",
+    url: "https://ai4.io/",
+    status: "confirmed",
+    tags: ["enterprise", "genai"],
+    summary:
+      "An enterprise-heavy AI event covering adoption, vendor landscape, and applied GenAI programs.",
+    highlights: ["Enterprise AI", "Vendor ecosystem", "Applied GenAI"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "kubecon-china-2026",
+    title: "KubeCon + CloudNativeCon China",
+    start: "2026-09-07",
+    end: "2026-09-09",
+    category: "Cloud",
+    organizer: "CNCF",
+    location: "Hong Kong",
+    url: "https://www.cncf.io/kubecon-cloudnativecon-events/",
+    status: "confirmed",
+    tags: ["kubernetes", "cloud-native"],
+    summary:
+      "China edition of KubeCon with Kubernetes, infra, and ecosystem updates for the region.",
+    highlights: ["Kubernetes", "Infra", "Regional ecosystem"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "dreamforce-2026",
+    title: "Salesforce Dreamforce",
+    start: "2026-09-15",
+    end: "2026-09-17",
+    category: "AI",
+    organizer: "Salesforce",
+    location: "San Francisco",
+    url: "https://www.salesforce.com/events/",
+    status: "confirmed",
+    tags: ["crm", "agents", "enterprise"],
+    summary:
+      "Salesforce's flagship event with CRM, enterprise AI, workflow automation, and agent announcements.",
+    highlights: ["Enterprise AI", "CRM roadmap", "Workflow automation"],
+    timezone: "UTC+8",
   },
   {
     id: "meta-connect-2026",
@@ -67,6 +146,9 @@ export const events: CalendarEvent[] = [
     status: "watch",
     tags: ["meta-ai", "xr", "wearables"],
     notes: "Track keynote confirmation and replay links.",
+    summary: "Meta's annual event for AI, XR hardware, wearables, and consumer platform direction.",
+    highlights: ["Keynote", "Hardware", "Meta AI updates"],
+    timezone: "UTC+8",
   },
   {
     id: "openai-devday-2026",
@@ -78,6 +160,72 @@ export const events: CalendarEvent[] = [
     url: "https://openai.com/index/devday-2026/",
     status: "confirmed",
     tags: ["api", "models", "agents"],
+    summary:
+      "OpenAI's developer event centered on APIs, models, agent tooling, and platform roadmap.",
+    highlights: ["API updates", "Model launches", "Developer platform"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "the-ai-conference-2026",
+    title: "The AI Conference",
+    start: "2026-09-29",
+    end: "2026-10-01",
+    category: "AI",
+    organizer: "The AI Conference",
+    location: "San Francisco",
+    url: "https://aiconference.com/",
+    status: "confirmed",
+    tags: ["applied-ai", "research", "product"],
+    summary:
+      "A broad AI conference mixing applied product work, research, and infrastructure discussions.",
+    highlights: ["Applied AI", "Research", "Product strategy"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "vercel-ship-sf-2026",
+    title: "Vercel Ship SF",
+    start: "2026-10-15",
+    category: "Frontend",
+    organizer: "Vercel",
+    location: "San Francisco",
+    url: "https://vercel.com/ship",
+    status: "confirmed",
+    tags: ["frontend", "platform", "ai"],
+    summary:
+      "Vercel's San Francisco edition focused on platform launches and frontend developer tooling.",
+    highlights: ["Keynote", "DX updates", "Frontend platform"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "oracle-ai-world-2026",
+    title: "Oracle AI World",
+    start: "2026-10-25",
+    end: "2026-10-28",
+    category: "Cloud",
+    organizer: "Oracle",
+    location: "Las Vegas",
+    url: "https://www.oracle.com/ai-world/",
+    status: "confirmed",
+    tags: ["oracle", "database", "enterprise-ai"],
+    summary:
+      "Oracle's enterprise AI event with database, cloud, and large-scale business AI messaging.",
+    highlights: ["Enterprise AI", "Database", "Cloud roadmap"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "ibm-techxchange-2026",
+    title: "IBM TechXchange / HashiConf",
+    start: "2026-10-26",
+    end: "2026-10-29",
+    category: "DevTools",
+    organizer: "IBM",
+    location: "Orlando",
+    url: "https://www.ibm.com/events/techxchange",
+    status: "confirmed",
+    tags: ["infra", "hashicorp", "cloud"],
+    summary: "An infra-heavy event mixing IBM platform updates with HashiCorp ecosystem interest.",
+    highlights: ["Infra", "Cloud ops", "HashiCorp ecosystem"],
+    timezone: "UTC+8",
   },
   {
     id: "github-universe-2026",
@@ -90,6 +238,26 @@ export const events: CalendarEvent[] = [
     url: "https://githubuniverse.com/",
     status: "confirmed",
     tags: ["copilot", "platform"],
+    summary:
+      "GitHub's flagship event for Copilot, platform releases, and developer workflow improvements.",
+    highlights: ["Copilot", "Developer workflow", "Platform updates"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "kubecon-na-2026",
+    title: "KubeCon + CloudNativeCon North America",
+    start: "2026-11-09",
+    end: "2026-11-12",
+    category: "Cloud",
+    organizer: "CNCF",
+    location: "Atlanta",
+    url: "https://www.cncf.io/kubecon-cloudnativecon-events/",
+    status: "confirmed",
+    tags: ["kubernetes", "cloud-native"],
+    summary:
+      "North America edition of KubeCon, usually one of the biggest cloud-native ecosystem gatherings.",
+    highlights: ["Kubernetes", "Maintainers", "Cloud-native ecosystem"],
+    timezone: "UTC+8",
   },
   {
     id: "microsoft-ignite-2026",
@@ -102,6 +270,10 @@ export const events: CalendarEvent[] = [
     url: "https://ignite.microsoft.com/en-US/home",
     status: "confirmed",
     tags: ["azure", "copilot", "enterprise"],
+    summary:
+      "Microsoft's enterprise event covering Azure, Copilot, security, and IT platform changes.",
+    highlights: ["Azure", "Copilot", "Enterprise IT"],
+    timezone: "UTC+8",
   },
   {
     id: "aws-reinvent-2026",
@@ -114,5 +286,74 @@ export const events: CalendarEvent[] = [
     url: "https://aws.amazon.com/events/reinvent/",
     status: "confirmed",
     tags: ["aws", "infra", "ai"],
+    summary:
+      "AWS's largest annual conference with infrastructure, data, AI, and cloud platform launches.",
+    highlights: ["Keynotes", "Infrastructure", "AI platform"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "google-io-2026",
+    title: "Google I/O",
+    start: "2026-05-19",
+    end: "2026-05-20",
+    category: "Frontend",
+    organizer: "Google",
+    location: "Mountain View / Online",
+    url: "https://io.google/",
+    status: "confirmed",
+    tags: ["android", "web", "gemini"],
+    notes: "Past 2026 event kept for recap and archive value.",
+    summary: "Google's annual developer event spanning Android, web, Chrome, and Gemini updates.",
+    highlights: ["Android", "Web", "Gemini"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "microsoft-build-2026",
+    title: "Microsoft Build",
+    start: "2026-06-02",
+    end: "2026-06-03",
+    category: "DevTools",
+    organizer: "Microsoft",
+    location: "Seattle / Online",
+    url: "https://build.microsoft.com/en-US/home",
+    status: "confirmed",
+    tags: ["copilot", "azure", "windows"],
+    notes: "Past 2026 event kept for recap and archive value.",
+    summary: "Microsoft's developer-focused event for Azure, Windows, AI platform, and tooling.",
+    highlights: ["Azure", "Windows", "AI developer tooling"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "apple-wwdc-2026",
+    title: "Apple WWDC26",
+    start: "2026-06-08",
+    end: "2026-06-12",
+    category: "Mobile",
+    organizer: "Apple",
+    location: "Cupertino / Online",
+    url: "https://www.apple.com/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/",
+    status: "confirmed",
+    tags: ["ios", "macos", "apple-intelligence"],
+    notes: "Past 2026 event kept for recap and archive value.",
+    summary: "Apple's annual developer conference for iOS, macOS, and platform SDK announcements.",
+    highlights: ["Platform SDKs", "Apple Intelligence", "Developer sessions"],
+    timezone: "UTC+8",
+  },
+  {
+    id: "databricks-data-ai-summit-2026",
+    title: "Databricks Data + AI Summit",
+    start: "2026-06-15",
+    end: "2026-06-18",
+    category: "AI",
+    organizer: "Databricks",
+    location: "San Francisco",
+    url: "https://www.databricks.com/dataaisummit",
+    status: "confirmed",
+    tags: ["data", "lakehouse", "enterprise-ai"],
+    notes: "Past 2026 event kept for recap and archive value.",
+    summary:
+      "Databricks' large event combining data engineering, lakehouse, analytics, and AI workflows.",
+    highlights: ["Lakehouse", "Data engineering", "Enterprise AI"],
+    timezone: "UTC+8",
   },
 ];

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import EventCalendar from "./components/EventCalendar.vue";
-import { eventCategories, events } from "./data.ts";
+import { events } from "./data.ts";
 </script>
 
 <template>
@@ -16,6 +16,6 @@ import { eventCategories, events } from "./data.ts";
       </div>
     </header>
 
-    <EventCalendar :events="events" :categories="eventCategories" />
+    <EventCalendar :events="events" />
   </div>
 </template>
