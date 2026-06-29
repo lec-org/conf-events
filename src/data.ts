@@ -73,6 +73,21 @@ export const events: CalendarEvent[] = [
     timezone: "UTC+8",
   },
   {
+    id: "vue-vite-conf-shanghai-2026",
+    title: "Vue x Vite Developer Conference 2026",
+    start: "2026-07-18",
+    category: "Frontend",
+    organizer: "FEQUAN / VueConf China",
+    location: "Shanghai",
+    url: "https://vueconf.cn/",
+    status: "confirmed",
+    tags: ["vue", "vite", "frontend", "community"],
+    summary:
+      "The Shanghai Vue and Vite community conference organized by FEQUAN, focused on the Vue ecosystem and modern frontend tooling.",
+    highlights: ["Vue ecosystem", "Vite tooling", "Community talks"],
+    timezone: "UTC+8",
+  },
+  {
     id: "kubecon-japan-2026",
     title: "KubeCon + CloudNativeCon Japan",
     start: "2026-07-28",
