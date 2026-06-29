@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
-import vize from "@vizejs/vite-plugin";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-  plugins: [vize()],
+  plugins: [vue()],
 });
