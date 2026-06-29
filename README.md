@@ -34,26 +34,23 @@ Each event entry can carry:
 ## Tech stack
 
 - Vue
-- Vite / Vite+
+- Vite
 - Vize
 - FullCalendar
 - TypeScript
 
 ## Local development
 
-This repo currently uses Vite+ commands.
-
 ```bash
-vp install
-vp dev
+pnpm install
+pnpm dev
 ```
 
 Other useful commands:
 
 ```bash
-vp check
-vp test
-vp build
+pnpm run check
+pnpm build
 ```
 
 ## Data model
@@ -71,8 +68,8 @@ The easiest deployment target for the current version is Vercel.
 Suggested setup:
 
 - Framework preset: `Vite`
-- Install command: `vp install`
-- Build command: `vp build`
+- Install command: `pnpm install`
+- Build command: `pnpm build`
 - Output directory: `dist`
 
 This project is a static frontend, so Vercel is mostly just serving the built files.
