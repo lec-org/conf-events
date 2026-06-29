@@ -1,4 +1,5 @@
 import { defineConfig } from "vite-plus";
+import vize from "@vizejs/vite-plugin";
 
 export default defineConfig({
   staged: {
@@ -10,4 +11,5 @@ export default defineConfig({
     rules: { "vite-plus/prefer-vite-plus-imports": "error" },
     options: { typeAware: true, typeCheck: true },
   },
+  plugins: [vize()],
 });
