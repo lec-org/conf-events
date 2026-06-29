@@ -63,11 +63,18 @@ When the user asks to expand the dataset, search these groups first:
 - China AI companies: Alibaba Cloud / Qwen, Baidu, Tencent, DeepSeek, Moonshot / Kimi
 - Dev platform companies: GitHub, Microsoft, Vercel, AWS, Oracle, Salesforce
 - Major conference organizers: CNCF, Apple, Google, Microsoft, Databricks
+- Community and media organizers: InfoQ, VueConf, FEDAY, JSConf, QCon, regional frontend communities
 
 For China AI companies such as DeepSeek, Kimi, or Moonshot:
 
 - do not assume they have a fixed annual conference
 - only add entries when an official event page or official announcement exists
+
+For community and organizer-led events:
+
+- include them if they are recurring and recognizable in the target audience
+- prefer official event sites over news posts or recap articles
+- keep them clearly labeled by organizer so they do not read like company product launches
 
 ## Summary style
 
