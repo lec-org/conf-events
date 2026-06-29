@@ -25,6 +25,16 @@ pnpm build
 
 If a user asks for a code or content change and there is no reason to stop early, make the change, validate it, and continue through commit/push when requested.
 
+Commit rule:
+
+- if a change includes anything beyond pure documentation edits, run local validation before commit
+- minimum validation for non-doc changes:
+
+```bash
+pnpm run check
+pnpm build
+```
+
 ## Deployment
 
 The deploy target is a normal Vite static build.
